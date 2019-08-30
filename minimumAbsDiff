@@ -1,0 +1,25 @@
+class Solution:
+    # @param A : list of integers
+    # @param B : list of integers
+    # @param C : list of integers
+    # @return an integer
+    def solve(self, A, B, C):
+        
+        #Big idea: always increment the min one
+        
+        i=j=k=0
+        minDiff = sys.maxint
+        while i<len(A) and j<len(B) and k<len(C):
+            print(i,j,k)
+            minElem = min(A[i],B[j],C[k])
+            
+            if minElem == A[i]:
+                i+=1
+            if minElem == B[j]:
+                j+=1
+            if minElem == C[k]:
+                k+=1
+                
+            minDiff = min(minDiff, max(A[i], B[j], C[k])-minElem)
+        return minDiff
+s 
